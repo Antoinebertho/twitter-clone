@@ -34,7 +34,7 @@ export const authOptions: AuthOptions = {
         );
 
         if (!isCorrectPassword) {
-          throw new Error("M ot de passe invalide");
+          throw new Error("Mot de passe invalide");
         }
 
         return user;
