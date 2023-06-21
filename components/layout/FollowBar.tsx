@@ -1,8 +1,14 @@
-import useUsers from '@/Hooks/useUsers';
-import Avatar from '../Avatar';
+import useUsers from "@/Hooks/useUsers";
+import Avatar from "../Avatar";
+import { useEffect, useState } from "react";
 
 const FollowBar = () => {
-  const { data: users = [] } = useUsers();
+  const [users, setUsers] = useState([]);
+  const { data = [] } = useUsers();
+
+  useEffect(() => {
+    setUsers(data);
+  }, [data]);
 
   if (users.length === 0) {
     return null;
